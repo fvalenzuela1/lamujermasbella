@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Pacifico|Roboto|Lora&display=swap&subset=latin-ext');
+
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-image 0.5s ease;
+}
+
+body.playing {
+    background-image: url("./img/stitchbailando2.gif");
+}
+
+body.paused {
+    background-image: url('./img/stitch2.gif');
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2,
+h1 {
+    font-family: 'Lora', serif;
+}
+
+.heart {
+    fill: red;
+    position: relative;
+    top: 5px;
+    width: 70px;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.letter {
+    background-color: #E7DCDE;
+    width: 90%;
+    max-width: 400px;
+    padding: 5%;
+    position: relative;
+    margin: 5vh auto;
+    border-radius: 15px;
+    border: 2px solid #6E4667;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1.8s;
+}
+
+.modal-window>div {
+    border-radius: 15px;
+    border: 2px solid;
+    width: 90%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    background: #ffffff;
+    color: #333333;
+    box-sizing: border-box;
+}
+
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+
+.modal-window:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.letter {
+    animation: fadeIn 1s both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.main-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.2em;
+    font-family: 'Caveat', cursive;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.caption {
+    padding: 2px;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 50% auto;
+        background-position: center bottom;
+        padding-bottom: 50%;
+
+    }
+
+    .main-title {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .heart {
+        width: 50px;
+    }
+
+    .letter {
+        margin-bottom: 20vh;
+
+    }
+}
+
+@media (min-width: 1024px) {
+    body.playing {
+        background-position: left bottom;
+        background-size: 25%;
+    }
+
+    body.paused {
+        background-position: left bottom;
+        background-size: 25%;
+    }
+}

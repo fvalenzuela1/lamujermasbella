@@ -18,11 +18,11 @@ body {
 }
 
 body.playing {
-    background-image: url("./img/cerdito2.jpg");
+    background-image: url("./img/cerdito2.png");
 }
 
 body.paused {
-    background-image: url('./img/wad.jpg');
+    background-image: url('./img/wad.png');
 }
 
 .audio-container {
